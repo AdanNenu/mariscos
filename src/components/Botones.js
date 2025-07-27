@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Botones.css";
 import { motion, AnimatePresence } from "framer-motion";
 
-//CONFIGURAR SI SE LANZA ANUNCIO 
+//CONFIGURAR SI SE LANZA ANUNCIO  
 // Variables configurables para abrir modal por defecto
 const abrirModalPorDefecto = false; // Cambia a false si no quieres abrirlo al inicio
 const tipoModalPorDefecto = "anuncioCliente"; // Opciones: "miAnuncio", "anuncioCliente" "galeria1", "galeria2", ..., "galeria5", "". Galeria 5 es para lanzar anuncios.
