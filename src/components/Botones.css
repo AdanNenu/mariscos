@@ -412,12 +412,12 @@ Botonera colapsada
 
 /*Boon Menu Colapsa*/
 .menu {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 10000;
-  pointer-events: auto;
+  position: static; /* Ya no será flotante ni superpuesto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .menu button {
   background: none;
@@ -428,10 +428,7 @@ Botonera colapsada
 /* 📱 Portrait (modo vertical en celulares y tablets) */
 @media screen and (orientation: portrait) {
   .menu {
-    bottom: 1rem;
-    right: 1rem;
-    display: block;
-    z-index: 10000;
+
   }
   
 }
@@ -459,12 +456,7 @@ Botonera colapsada
 /* Móviles y tablets (hasta 1024px) */
 @media screen and (orientation: landscape) and (max-width: 1024px) {
   .menu {
-    position: fixed;
-    bottom: 1rem; /*Para que menu que de centrado respecto a la botonera*/
-    right: 1rem;
-    display: flex;
-	
-    z-index: 10000;
+
   }
   
   .apps-colapsadas.horizontal {
@@ -491,11 +483,7 @@ Botonera colapsada
 /* Escritorio (desde 1025px) */
 @media screen and (orientation: landscape) and (min-width: 1025px) {
   .menu {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    display: flex;
-    z-index: 10000;
+ 
   }
 
   .botones-container {
@@ -574,3 +562,5 @@ Botonera colapsada
 .boton-aceptar-modal {
   margin-top: auto; /* empuja hacia abajo */
 }
+
+

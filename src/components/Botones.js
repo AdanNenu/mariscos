@@ -470,18 +470,22 @@ return (
 
       {/* Botonera dinámica */}
       <div className="apps">
-        {colapsarBotonera ? (
-          <>
-            {/* ←──────────── Botón de Menú ya integrado aquí mismo ─────────────→ */}
-            {iconMenu && (
-              <button
-                className={menuAbierto ? 'expandido' : 'contraido'}
-                onClick={() => setMenuAbierto(prev => !prev)}
-              >
-                <img src={iconMenu} alt="Menú" />
-              </button>
-            )}
-          </>
+        
+		{colapsarBotonera ? (	
+          <div className="menu">
+			{/* ←──────────── Botón de Menú con clase "menu" aplicada al contenedor ─────────────→ */}
+			{iconMenu && (
+			  <button
+				className={menuAbierto ? 'expandido' : 'contraido'}
+				onClick={() => setMenuAbierto(prev => !prev)}
+			  >
+				<img src={iconMenu} alt="Menú" />
+			  </button>
+			)}
+			
+			
+			
+		  </div>
         ) : (
           <>
             {iconGallery2 && <button onClick={() => abrirGaleria(2)}><img src={iconGallery2} alt="Galería 2" /></button>}
