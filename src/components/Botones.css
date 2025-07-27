@@ -47,21 +47,14 @@
   justify-content: center;
 }
 
-
 .botones-container .reproductor img {
   gap: 3px;
 	
 }
 
-
 .botones-container .apps img {
   filter: none;
 }
-
-
-
-
-
 
 
 /*Tablets*/
@@ -70,7 +63,6 @@
     width: 6vw;
     height: 6vw;
   }
-  
   
 }
 @media screen and (orientation: portrait) {
@@ -106,7 +98,6 @@ button:focus, button:focus-visible {
 button {
   -webkit-tap-highlight-color: transparent;
 }
-
 
 
 /*Modifica Botonera Escritorio y tablewt Landscapes*/
@@ -341,31 +332,6 @@ button {
   color: white;
 }
 
-/*
-Botonera colapsada
-.apps-colapsadas.vertical {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-top: 0.5rem;
-}
-
-
-
-.apps-colapsadas.horizontal {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: center;
-  max-height: 80vh;
-  overflow-y: auto;
-  margin-top: 0.5rem;
-}
-*/
-
-
 /*Botonera colapsada Linea sin Wrap*/
 .apps-colapsadas.horizontal {
   position: fixed;
@@ -387,8 +353,6 @@ Botonera colapsada
 
 }
 
-
-
 .apps-colapsadas.vertical {
   position: fixed;
   bottom: 12vh;
@@ -408,8 +372,6 @@ Botonera colapsada
   padding: 0.5rem;
 }
 
-
-
 /*Boon Menu Colapsa*/
 .menu {
   position: static; /* Ya no será flotante ni superpuesto */
@@ -425,16 +387,6 @@ Botonera colapsada
   cursor: pointer;
 }
 
-/* 📱 Portrait (modo vertical en celulares y tablets) */
-@media screen and (orientation: portrait) {
-  .menu {
-
-  }
-  
-}
-
-
-
 .apps-colapsadas button {
   position: relative;
   z-index: 1;
@@ -449,16 +401,8 @@ Botonera colapsada
   background: transparent;
 }
 
-
-
-
-/* Móviles y tablets (hasta 1024px) */
 /* Móviles y tablets (hasta 1024px) */
 @media screen and (orientation: landscape) and (max-width: 1024px) {
-  .menu {
-
-  }
-  
   .apps-colapsadas.horizontal {
     position: fixed;
     bottom: 2vh;
@@ -470,7 +414,6 @@ Botonera colapsada
     padding: 1vh;
     align-items: center;
 	justify-content: center;
-	
   }
   
   .apps-colapsadas img {
@@ -482,10 +425,6 @@ Botonera colapsada
 
 /* Escritorio (desde 1025px) */
 @media screen and (orientation: landscape) and (min-width: 1025px) {
-  .menu {
- 
-  }
-
   .botones-container {
     position: fixed;
     top: 50%;
@@ -500,7 +439,6 @@ Botonera colapsada
     z-index: 1000;
   }
 }
-
 
 .menu button.expandido {
   transform: scale(1.3);

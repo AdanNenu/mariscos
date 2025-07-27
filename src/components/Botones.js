@@ -11,32 +11,31 @@ const tipoModalPorDefecto = "anuncioCliente"; // Opciones: "miAnuncio", "anuncio
 const fechaInicioModal = "2025-07-10"; // Formato YYYY-MM-DD
 const fechaFinModal = "2025-07-30";    // Formato YYYY-MM-DD
 
+//URL Anuncio Cliente
 const urlModalAnuncioClienteH = "https://www.canva.com/design/DAGtHFEdE2M/E30NZGqvTxSaQsPNHt1-Dg/watch?embed";//Se quema la variable del anuncio del cliente
 const urlModalAnuncioClienteV = "https://www.canva.com/design/DAGtHFEdE2M/E30NZGqvTxSaQsPNHt1-Dg/watch?embed";//Se quema la variable del anuncio del cliente
 let urlModalActualH = "";//Se usará par validar si la urlModalAnuncioCliente es igual a urlModalActualH
 let urlModalActualV = "";//para saber si se trata del anuncio, y agregar boton.
 
-
-
 //Constante
 const colapsarBotonera  = true; //Si es false, funciona con normalidad. Si es True, colapsar con la nueva logica
 
 //Información del Cliente
-const telefonoWA = "";
-const telefonoMovil = "+524771658536";
+const telefonoWA = "+52";
+const telefonoMovil = "+52";
 const correoGmail = "";
 const urlMaps = "";
 const urlCalendy = "";
 const url1 = "https://www.ubereats.com/store-browse-uuid/664f45fe-79ba-5922-8e89-9fe5e49db02a?diningMode=DELIVERY";//Uber eats
-const url2 = "https://scan.page/p/Y9lX8w"; //Pdf Básico
-const url3 = "https://scan.page/p/EnBlI4";//Galeria de Imágenes
-const url4 = "https://yotepromociono.store";//Pdf varios
-const url5 = "https://yotepongoonline.site";//Tarjeta animada básica
-const url6 = "https://qr.pro/i/p/6852fceb649eb";//Menu básico
-const url7 = "https://yoteinvito.store";//Mariscos yoteinvio.store
-const url8 = "https://jochosmiguel.store";
+const url2 = ""; 
+const url3 = "";
+const url4 = "";
+const url5 = ""
+const url6 = ""
+const url7 = ""
+const url8 = ""
 const url9 = "";
-const url10 = "https://barberstylepostre.site";
+const url10 = ""
 const mensajeWhats = encodeURIComponent("¡Hola! Me gustaría ordenar");
 const mensajeCompartir = encodeURIComponent("¡Mira!, tu que tenías ganas de maríscos.");
 const mensajeGmail = encodeURIComponent("¡Hola!");
@@ -79,7 +78,6 @@ try { iconPDF7 = require('../assets/pdf7.png'); } catch {}
 try { iconPDF8 = require('../assets/pdf8.png'); } catch {}
 try { iconPDF9 = require('../assets/pdf9.png'); } catch {}
 try { iconPDF10 = require('../assets/pdf10.png'); } catch {}
-
 
 try { iconurl1 = require('../assets/url1.png'); } catch {}
 try { iconurl2 = require('../assets/url2.png'); } catch {}
@@ -283,9 +281,6 @@ const Botones = ({ onPlayPause, onRewind, onForward, onToggleMute, isMuted, isPl
             H: { galeria1: "https://www.canva.com/design/DAGuNU-Chh4/419xbNNE8A-16Rpq6xHr-A/view?embed" },
           };
 		  
-	
-
-			//Galeria 5 es especial para lanzar anucnio modal, por el boton de "Enterado"
 			const nuevasGalerias = {
             galeria1: data[`urlGallery1${sufijo}`] || defaults[sufijo].galeria1,
             galeria2: data[`urlGallery2${sufijo}`] || "",
@@ -386,23 +381,23 @@ const Botones = ({ onPlayPause, onRewind, onForward, onToggleMute, isMuted, isPl
 	}, [esVertical, urlMiAnuncio, urlsGalerias, tipoActualModal, modalAbierto]);
 	
 
-//*Manejar historial
-useEffect(() => {
-  const manejarPopState = (event) => {
-    if (modalAbierto) {
-      setModalAbierto(false);
-      setTipoActualModal(null);
-    }
-  };
+	//*Manejar historial
+	useEffect(() => {
+	  const manejarPopState = (event) => {
+		if (modalAbierto) {
+		  setModalAbierto(false);
+		  setTipoActualModal(null);
+		}
+	  };
 
-  if (modalAbierto && (!window.history.state || !window.history.state.modal)) {
-    window.history.pushState({ modal: true }, "");
-  }
+	  if (modalAbierto && (!window.history.state || !window.history.state.modal)) {
+		window.history.pushState({ modal: true }, "");
+	  }
 
-  window.addEventListener("popstate", manejarPopState);
-  
-  return () => window.removeEventListener("popstate", manejarPopState);
-}, [modalAbierto]);
+	  window.addEventListener("popstate", manejarPopState);
+	  
+	  return () => window.removeEventListener("popstate", manejarPopState);
+	}, [modalAbierto]);
 
 
 
@@ -436,27 +431,28 @@ useEffect(() => {
 	}, []);
 	
 	
-//Devuelve la URL galeria actual, sirve para validar si es Anuncio del cliente
-useEffect(() => {
-    const urls = urlsGalerias[galeriaActual];
-    if (urls) {
-      urlModalActualH = urls.horizontal;
-      urlModalActualV = urls.vertical;
-    }
-}, [galeriaActual]);
+	//Devuelve la URL galeria actual, sirve para validar si es Anuncio del cliente
+	useEffect(() => {
+		const urls = urlsGalerias[galeriaActual];
+		if (urls) {
+		  urlModalActualH = urls.horizontal;
+		  urlModalActualV = urls.vertical;
+		}
+	}, [galeriaActual]);
 
 
-//Siver para no generar mas historial cuando se cierran modales
-const cerrarModal = () => {
-  setModalAbierto(false);
-  window.history.back(); // Retrocede en el historial para eliminar la entrada del modal
-};
+	//Siver para no generar mas historial cuando se cierran modales
+	const cerrarModal = () => {
+	  setModalAbierto(false);
+	  window.history.back(); // Retrocede en el historial para eliminar la entrada del modal
+	};
 
 	
 
 return (
   <>
     <div className="botones-container">
+	  {/* Reproductor */}
       <div className="reproductor">
         {iconGallery1 && <button onClick={() => abrirGaleria(1)}><img src={iconGallery1} alt="Galería 1" /></button>}
         {iconurl1 && <button onClick={() => abrirURL1()}><img src={iconurl1} alt="URL 1" /></button>}
@@ -468,7 +464,7 @@ return (
         )}
       </div>
 
-      {/* Botonera dinámica */}
+      {/* Apps - Botonera dinámica */}
       <div className="apps">
         
 		{colapsarBotonera ? (	
@@ -482,9 +478,6 @@ return (
 				<img src={iconMenu} alt="Menú" />
 			  </button>
 			)}
-			
-			
-			
 		  </div>
         ) : (
           <>
