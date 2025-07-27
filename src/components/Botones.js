@@ -11,8 +11,8 @@ const tipoModalPorDefecto = "anuncioCliente"; // Opciones: "miAnuncio", "anuncio
 const fechaInicioModal = "2025-07-10"; // Formato YYYY-MM-DD
 const fechaFinModal = "2025-07-30";    // Formato YYYY-MM-DD
 
-const urlModalAnuncioClienteH = "";//Se quema la variable del anuncio del cliente
-const urlModalAnuncioClienteV = "";//Se quema la variable del anuncio del cliente
+const urlModalAnuncioClienteH = "https://www.canva.com/design/DAGtHFEdE2M/E30NZGqvTxSaQsPNHt1-Dg/watch?embed";//Se quema la variable del anuncio del cliente
+const urlModalAnuncioClienteV = "https://www.canva.com/design/DAGtHFEdE2M/E30NZGqvTxSaQsPNHt1-Dg/watch?embed";//Se quema la variable del anuncio del cliente
 let urlModalActualH = "";//Se usará par validar si la urlModalAnuncioCliente es igual a urlModalActualH
 let urlModalActualV = "";//para saber si se trata del anuncio, y agregar boton.
 
@@ -23,20 +23,20 @@ const colapsarBotonera  = true; //Si es false, funciona con normalidad. Si es Tr
 
 //Información del Cliente
 const telefonoWA = "";
-const telefonoMovil = "+524771234567";
+const telefonoMovil = "+524771658536";
 const correoGmail = "";
 const urlMaps = "";
 const urlCalendy = "";
 const url1 = "https://www.ubereats.com/store-browse-uuid/664f45fe-79ba-5922-8e89-9fe5e49db02a?diningMode=DELIVERY";//Uber eats
-const url2 = ""; //Pdf Básico
-const url3 = "";//Galeria de Imágenes
-const url4 = "";//Pdf varios
-const url5 = "";//Tarjeta animada básica
-const url6 = "";//Menu básico
-const url7 = "";//Mariscos yoteinvio.store
-const url8 = "";
+const url2 = "https://scan.page/p/Y9lX8w"; //Pdf Básico
+const url3 = "https://scan.page/p/EnBlI4";//Galeria de Imágenes
+const url4 = "https://yotepromociono.store";//Pdf varios
+const url5 = "https://yotepongoonline.site";//Tarjeta animada básica
+const url6 = "https://qr.pro/i/p/6852fceb649eb";//Menu básico
+const url7 = "https://yoteinvito.store";//Mariscos yoteinvio.store
+const url8 = "https://jochosmiguel.store";
 const url9 = "";
-const url10 = "";
+const url10 = "https://barberstylepostre.site";
 const mensajeWhats = encodeURIComponent("¡Hola! Me gustaría ordenar");
 const mensajeCompartir = encodeURIComponent("¡Mira!, tu que tenías ganas de maríscos.");
 const mensajeGmail = encodeURIComponent("¡Hola!");
@@ -400,6 +400,7 @@ useEffect(() => {
   }
 
   window.addEventListener("popstate", manejarPopState);
+  
   return () => window.removeEventListener("popstate", manejarPopState);
 }, [modalAbierto]);
 
@@ -458,9 +459,9 @@ return (
     <div className="botones-container">
       <div className="reproductor">
         {iconGallery1 && <button onClick={() => abrirGaleria(1)}><img src={iconGallery1} alt="Galería 1" /></button>}
-		{iconurl1 && <button onClick={() => abrirURL1()}><img src={iconurl1} alt="URL 1" /></button>}
-		{iconMiWa && <button onClick={abrirMiWhatsApp}><img src={iconMiWa} alt="WhatsApp" /></button>}
-		{iconMute && iconVol && (
+        {iconurl1 && <button onClick={() => abrirURL1()}><img src={iconurl1} alt="URL 1" /></button>}
+        {iconMiWa && <button onClick={abrirMiWhatsApp}><img src={iconMiWa} alt="WhatsApp" /></button>}
+        {iconMute && iconVol && (
           <button onClick={onToggleMute}>
             <img src={isMuted ? iconMute : iconVol} alt="Silenciar/Sonar" />
           </button>
@@ -471,21 +472,15 @@ return (
       <div className="apps">
         {colapsarBotonera ? (
           <>
-          <div className="menu">
-			  {iconMenu && (
-<button
-  className={menuAbierto ? 'expandido' : 'contraido'}
-  onClick={(e) => {
-    // Alterna el estado de menú
-    setMenuAbierto(prev => !prev);
-  }}
->
-  <img src={iconMenu} alt="Menú" />
-</button>
-
-
-			  )}
-			</div>
+            {/* ←──────────── Botón de Menú ya integrado aquí mismo ─────────────→ */}
+            {iconMenu && (
+              <button
+                className={menuAbierto ? 'expandido' : 'contraido'}
+                onClick={() => setMenuAbierto(prev => !prev)}
+              >
+                <img src={iconMenu} alt="Menú" />
+              </button>
+            )}
           </>
         ) : (
           <>
@@ -495,7 +490,7 @@ return (
             {iconGallery5 && <button onClick={() => abrirGaleria(5)}><img src={iconGallery5} alt="Galería 5" /></button>}
 
             {iconPDF1 && <button onClick={() => manejarClickPDF(1)}><img src={iconPDF1} alt="PDF 1" /></button>}   
-	        {iconPDF2 && <button onClick={() => manejarClickPDF(2)}><img src={iconPDF2} alt="PDF 2" /></button>}
+            {iconPDF2 && <button onClick={() => manejarClickPDF(2)}><img src={iconPDF2} alt="PDF 2" /></button>}
             {iconPDF3 && <button onClick={() => manejarClickPDF(3)}><img src={iconPDF3} alt="PDF 3" /></button>}
             {iconPDF4 && <button onClick={() => manejarClickPDF(4)}><img src={iconPDF4} alt="PDF 4" /></button>}
             {iconPDF5 && <button onClick={() => manejarClickPDF(5)}><img src={iconPDF5} alt="PDF 5" /></button>}
@@ -504,9 +499,8 @@ return (
             {iconPDF8 && <button onClick={() => manejarClickPDF(8)}><img src={iconPDF8} alt="PDF 8" /></button>}
             {iconPDF9 && <button onClick={() => manejarClickPDF(9)}><img src={iconPDF9} alt="PDF 9" /></button>}
             {iconPDF10 && <button onClick={() => manejarClickPDF(10)}><img src={iconPDF10} alt="PDF 10" /></button>}
-			
-			
-			{iconurl1 && <button onClick={() => abrirURL1()}><img src={iconurl1} alt="URL 1" /></button>}
+
+            {iconurl1 && <button onClick={() => abrirURL1()}><img src={iconurl1} alt="URL 1" /></button>}
             {iconurl2 && <button onClick={() => abrirURL2()}><img src={iconurl2} alt="URL 2" /></button>}
             {iconurl3 && <button onClick={() => abrirURL3()}><img src={iconurl3} alt="URL 3" /></button>}
             {iconurl4 && <button onClick={() => abrirURL4()}><img src={iconurl4} alt="URL 4" /></button>}
@@ -514,21 +508,19 @@ return (
             {iconurl6 && <button onClick={() => abrirURL6()}><img src={iconurl6} alt="URL 6" /></button>}
             {iconurl7 && <button onClick={() => abrirURL7()}><img src={iconurl7} alt="URL 7" /></button>}
             {iconurl8 && <button onClick={() => abrirURL8()}><img src={iconurl8} alt="URL 8" /></button>}
-			{iconurl9 && <button onClick={() => abrirURL9()}><img src={iconurl9} alt="URL 9" /></button>}
-			{iconurl10 && <button onClick={() => abrirURL10()}><img src={iconurl10} alt="URL 10" /></button>}
-			
-			
-	        {iconCalendy && <button onClick={abrirCalendy}><img src={iconCalendy} alt="Calendly" /></button>}
+            {iconurl9 && <button onClick={() => abrirURL9()}><img src={iconurl9} alt="URL 9" /></button>}
+            {iconurl10 && <button onClick={() => abrirURL10()}><img src={iconurl10} alt="URL 10" /></button>}
+
+            {iconCalendy && <button onClick={abrirCalendy}><img src={iconCalendy} alt="Calendly" /></button>}
             {iconGmail && <button onClick={abrirGmail}><img src={iconGmail} alt="Gmail" /></button>}
             {iconPhone && <button onClick={llamar}><img src={iconPhone} alt="Teléfono" /></button>}
             {iconMaps && <button onClick={abrirMaps}><img src={iconMaps} alt="Ubicación" /></button>}
             {iconShare && <button onClick={compartir}><img src={iconShare} alt="Compartir" /></button>}
-			{iconWhats && <button onClick={abrirWhatsApp}><img src={iconWhats} alt="WhatsApp" /></button>}
+            {iconWhats && <button onClick={abrirWhatsApp}><img src={iconWhats} alt="WhatsApp" /></button>}
 
-			{/* Mis datos de Empresa */}
-				{iconMiMail && <button onClick={abrirMiGmail}><img src={iconMiMail} alt="Gmail" /></button>}
-				{/*	{iconMiWa && <button onClick={abrirMiWhatsApp}><img src={iconMiWa} alt="WhatsApp" /></button>}*/}
-
+            {/* Mis datos de Empresa */}
+            {iconMiMail && <button onClick={abrirMiGmail}><img src={iconMiMail} alt="Gmail" /></button>}
+            {/*	{iconMiWa && <button onClick={abrirMiWhatsApp}><img src={iconMiWa} alt="WhatsApp" /></button>}*/}
           </>
         )}
       </div>
@@ -546,14 +538,14 @@ return (
             transition={{ duration: 0.3 }}
             style={{ display: "flex",  gap: "0.5rem", marginTop: "0.5rem" }}
           >
-		    {/*{iconGallery1 && <button onClick={() => abrirGaleria(1)}><img src={iconGallery1} alt="Galería 1" /></button>}*/}
+            {/*{iconGallery1 && <button onClick={() => abrirGaleria(1)}><img src={iconGallery1} alt="Galería 1" /></button>}*/}
             {iconGallery2 && <button onClick={() => abrirGaleria(2)}><img src={iconGallery2} alt="Galería 2" /></button>}
             {iconGallery3 && <button onClick={() => abrirGaleria(3)}><img src={iconGallery3} alt="Galería 3" /></button>}
             {iconGallery4 && <button onClick={() => abrirGaleria(4)}><img src={iconGallery4} alt="Galería 4" /></button>}
             {iconGallery5 && <button onClick={() => abrirGaleria(5)}><img src={iconGallery5} alt="Galería 5" /></button>}
 
-			{/*{iconPDF1 && <button onClick={() => manejarClickPDF(1)}><img src={iconPDF1} alt="PDF 1" /></button>}*/}
-			{/*{iconPDF2 && <button onClick={() => manejarClickPDF(2)}><img src={iconPDF2} alt="PDF 2" /></button>}*/}
+            {/*{iconPDF1 && <button onClick={() => manejarClickPDF(1)}><img src={iconPDF1} alt="PDF 1" /></button>}*/}
+            {/*{iconPDF2 && <button onClick={() => manejarClickPDF(2)}><img src={iconPDF2} alt="PDF 2" /></button>}*/}
             {iconPDF3 && <button onClick={() => manejarClickPDF(3)}><img src={iconPDF3} alt="PDF 3" /></button>}
             {iconPDF4 && <button onClick={() => manejarClickPDF(4)}><img src={iconPDF4} alt="PDF 4" /></button>}
             {iconPDF5 && <button onClick={() => manejarClickPDF(5)}><img src={iconPDF5} alt="PDF 5" /></button>}
@@ -562,9 +554,9 @@ return (
             {iconPDF8 && <button onClick={() => manejarClickPDF(8)}><img src={iconPDF8} alt="PDF 8" /></button>}
             {iconPDF9 && <button onClick={() => manejarClickPDF(9)}><img src={iconPDF9} alt="PDF 9" /></button>}
             {iconPDF10 && <button onClick={() => manejarClickPDF(10)}><img src={iconPDF10} alt="PDF 10" /></button>}
-			
-			{/*Botones para las URL*/}
-			{/*{iconurl1 && <button onClick={() => abrirURL1()}><img src={iconurl1} alt="URL 1" /></button>}*/}
+
+            {/*Botones para las URL*/}
+            {/*{iconurl1 && <button onClick={() => abrirURL1()}><img src={iconurl1} alt="URL 1" /></button>}*/}
             {iconurl2 && <button onClick={() => abrirURL2()}><img src={iconurl2} alt="URL 2" /></button>}
             {iconurl3 && <button onClick={() => abrirURL3()}><img src={iconurl3} alt="URL 3" /></button>}
             {iconurl4 && <button onClick={() => abrirURL4()}><img src={iconurl4} alt="URL 4" /></button>}
@@ -572,84 +564,71 @@ return (
             {iconurl6 && <button onClick={() => abrirURL6()}><img src={iconurl6} alt="URL 6" /></button>}
             {iconurl7 && <button onClick={() => abrirURL7()}><img src={iconurl7} alt="URL 7" /></button>}
             {iconurl8 && <button onClick={() => abrirURL8()}><img src={iconurl8} alt="URL 8" /></button>}
-			{iconurl9 && <button onClick={() => abrirURL9()}><img src={iconurl9} alt="URL 9" /></button>}
-			{iconurl10 && <button onClick={() => abrirURL10()}><img src={iconurl10} alt="URL 10" /></button>}
+            {iconurl9 && <button onClick={() => abrirURL9()}><img src={iconurl9} alt="URL 9" /></button>}
+            {iconurl10 && <button onClick={() => abrirURL10()}><img src={iconurl10} alt="URL 10" /></button>}
 
-			{/*{iconCalendy && <button onClick={abrirCalendy}><img src={iconCalendy} alt="Calendly" /></button>}*/}
+            {/*{iconCalendy && <button onClick={abrirCalendy}><img src={iconCalendy} alt="Calendly" /></button>}*/}
             {iconGmail && <button onClick={abrirGmail}><img src={iconGmail} alt="Gmail" /></button>}
-			{/*{iconWhats && <button onClick={abrirWhatsApp}><img src={iconWhats} alt="WhatsApp" /></button>}*/}
+            {/*{iconWhats && <button onClick={abrirWhatsApp}><img src={iconWhats} alt="WhatsApp" /></button>}*/}
             {iconPhone && <button onClick={llamar}><img src={iconPhone} alt="Teléfono" /></button>}
             {iconMaps && <button onClick={abrirMaps}><img src={iconMaps} alt="Ubicación" /></button>}
             {iconShare && <button onClick={compartir}><img src={iconShare} alt="Compartir" /></button>}
             {iconReport && <button onClick={abrirModalMiAnuncio}><img src={iconReport} alt="Anuncio" /></button>}
-			
-			{/* Mis datos de Empresa */}
-			{/*{iconMiMail && <button onClick={abrirMiGmail}><img src={iconMiMail} alt="Gmail" /></button>}*/}
-            {/*{iconMiWa && <button onClick={abrirMiWhatsApp}><img src={iconMiWa} alt="WhatsApp" /></button>}*/}
 
+            {/* Mis datos de Empresa */}
+            {/*{iconMiMail && <button onClick={abrirMiGmail}><img src={iconMiMail} alt="Gmail" /></button>}*/}
+            {/*{iconMiWa && <button onClick={abrirMiWhatsApp}><img src={iconMiWa} alt="WhatsApp" /></button>}*/}
           </motion.div>
         )}
       </AnimatePresence>
     )}
 
-<>
-  {modalAbierto && (
-    <div className="modal-overlay" onClick={() => setModalAbierto(false)}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-	  
-	  
-		<div style={{
-		  width: "100%", height: 0, paddingTop: esVertical ? "177.7778%" : "56.25%",
-		  overflow: "hidden", borderRadius: "8px", position: "relative"
-		}}>
-		  <iframe
-			key={galeriaActual}
-			loading="lazy"
-			style={{ position: "absolute", width: "100%", height: "100%", top: 0, left: 0, border: "none" }}
-			src={galeriaActual}
-			allowFullScreen
-		  ></iframe>
+    <>
+      {modalAbierto && (
+        <div className="modal-overlay" onClick={() => setModalAbierto(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div style={{
+              width: "100%", height: 0, paddingTop: esVertical ? "177.7778%" : "56.25%",
+              overflow: "hidden", borderRadius: "8px", position: "relative"
+            }}>
+              <iframe
+                key={galeriaActual}
+                loading="lazy"
+                style={{ position: "absolute", width: "100%", height: "100%", top: 0, left: 0, border: "none" }}
+                src={galeriaActual}
+                allowFullScreen
+              ></iframe>
 
-		{esMiAnuncio ? (
-  <div className="contenedor-botones-anuncio">
-    <button
-      className="boton-aceptar-anuncio"
-      onClick={() => window.open(urlMiSitioWeb, "_blank")}
-    >
-      Visitar Web
-    </button>
-    <button
-      className="boton-aceptar-anuncio"
-      onClick={cerrarModal}
-    >
-      Cancelar
-    </button>
-  </div>
-) : galeriaActual === urlModalAnuncioClienteH || galeriaActual === urlModalAnuncioClienteV ? (
-  <button
-    className="boton-aceptar-superpuesto"
-    onClick={cerrarModal}
-  >
-    Enterado
-  </button>
-) : (
-	
-	null
-)}
-
-
-
-
-
-		  
-		  
-		</div>
-
-			  </div>
-			</div>
-		  )}
-		</>
-
+              {esMiAnuncio ? (
+                <div className="contenedor-botones-anuncio">
+                  <button
+                    className="boton-aceptar-anuncio"
+                    onClick={() => window.open(urlMiSitioWeb, "_blank")}
+                  >
+                    Visitar Web
+                  </button>
+                  <button
+                    className="boton-aceptar-anuncio"
+                    onClick={cerrarModal}
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              ) : galeriaActual === urlModalAnuncioClienteH || galeriaActual === urlModalAnuncioClienteV ? (
+                <button
+                  className="boton-aceptar-superpuesto"
+                  onClick={cerrarModal}
+                >
+                  Enterado
+                </button>
+              ) : (
+                null
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
 
     {miniModal !== null && (
       <div className="modal-pdf">
