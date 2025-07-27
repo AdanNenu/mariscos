@@ -22,9 +22,9 @@ const colapsarBotonera  = true; //Si es false, funciona con normalidad. Si es Tr
 
 //Información del Cliente
 const telefonoWA = "+52";
-const telefonoMovil = "+52";
+const telefonoMovil = "+524771234567";
 const correoGmail = "";
-const urlMaps = "";
+const urlMaps = "https://maps.app.goo.gl/9mUxrgW3ZbTnHkr27";
 const urlCalendy = "";
 const url1 = "https://www.ubereats.com/store-browse-uuid/664f45fe-79ba-5922-8e89-9fe5e49db02a?diningMode=DELIVERY";//Uber eats
 const url2 = ""; 
