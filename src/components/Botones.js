@@ -2,6 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Botones.css";
 import { motion, AnimatePresence } from "framer-motion";
 
+
+import iconMaps from '../assets/ubicacion.png'; 
+import iconPhone from '../assets/telefono.png'; 
+import iconShare from '../assets/compartir.png'; 
+import iconReport from '../assets/informes.png'; 
+
+
 //CONFIGURAR SI SE LANZA ANUNCIO  
 // Variables configurables para abrir modal por defecto
 const abrirModalPorDefecto = false; // Cambia a false si no quieres abrirlo al inicio
@@ -42,7 +49,7 @@ const mensajeGmail = encodeURIComponent("¡Hola!");
 
 // Cargar imágenes sin que truene si no existen
 let iconRewind, iconPlay, iconPause, iconForward, iconMute, iconVol, iconMenu;
-let iconGmail, iconWhats, iconMaps, iconPhone, iconShare, iconCalendy, iconReport;
+let iconGmail, iconWhats, iconCalendy;
 let iconGallery1, iconGallery2, iconGallery3, iconGallery4, iconGallery5;
 let iconPDF1, iconPDF2, iconPDF3, iconPDF4, iconPDF5, iconPDF6, iconPDF7, iconPDF8, iconPDF9, iconPDF10;
 let iconurl1, iconurl2, iconurl3, iconurl4, iconurl5, iconurl6, iconurl7, iconurl8, iconurl9, iconurl10;
@@ -57,11 +64,11 @@ try { iconVol = require('../assets/volumen.png'); } catch {}
 
 try { iconGmail = require('../assets/gmail.png'); } catch {}
 try { iconWhats = require('../assets/wa.png'); } catch {}
-try { iconMaps = require('../assets/ubicacion.png'); } catch {}
-try { iconPhone = require('../assets/telefono.png'); } catch {}
-try { iconShare = require('../assets/compartir.png'); } catch {}
+
+
+
+
 try { iconCalendy = require('../assets/calendy.png'); } catch {}
-try { iconReport = require('../assets/informes.png'); } catch {}
 try { iconGallery1 = require('../assets/galeria1.png'); } catch {}
 try { iconGallery2 = require('../assets/galeria2.png'); } catch {}
 try { iconGallery3 = require('../assets/galeria3.png'); } catch {}
